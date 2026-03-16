@@ -7,9 +7,9 @@
   },
   "dependencies": {
     "discord.js": "^14.14.1",
-    "@discordjs/voice": "^0.17.0",
+    "@discordjs/voice": "0.16.1",
     "@distube/youtube": "latest",
-    "tweetnacl": "^1.0.3",
+    "libsodium-wrappers": "^0.7.13",
     "opusscript": "0.0.8",
     "distube": "^5.0.0",
     "dotenv": "16.4.5",
