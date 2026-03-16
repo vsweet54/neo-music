@@ -1,4 +1,4 @@
-FROM node:18-slim
+FROM node:22-slim
 
 RUN apt-get update && apt-get install -y \
     ffmpeg \
@@ -14,4 +14,4 @@ COPY package*.json ./
 RUN npm install --legacy-peer-deps
 COPY . .
 
-CMD ["sh", "-c", "node deploy-commands.js && node index.js"]
+CMD ["sh", "start.sh"]

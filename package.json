@@ -8,8 +8,6 @@
   "dependencies": {
     "discord.js": "14.14.1",
     "@discordjs/voice": "0.16.1",
-    "@distube/ytsr": "latest",
-    "@distube/ytdl-core": "latest",
     "opusscript": "0.0.8",
     "distube": "4.0.4",
     "dotenv": "16.4.5",
