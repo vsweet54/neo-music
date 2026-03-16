@@ -16,8 +16,6 @@ const client = new Client({
 
 client.distube = new DisTube(client, {
   emitNewSongOnly: true,
-  leaveOnEmpty: true,
-  leaveOnFinish: true,
   nsfw: false,
   plugins: [new YouTubePlugin()],
 });
