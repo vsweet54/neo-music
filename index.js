@@ -4,6 +4,15 @@ const { DisTube } = require('distube');
 const { YouTubePlugin } = require('@distube/youtube');
 const { setDefaultResultOrder } = require('dns');
 setDefaultResultOrder('ipv4first');
+
+// Force load encryption
+try {
+  require('tweetnacl');
+  console.log('✅ tweetnacl loaded');
+} catch(e) {
+  console.error('❌ tweetnacl failed:', e.message);
+}
+
 const fs = require('fs');
 const path = require('path');
 
