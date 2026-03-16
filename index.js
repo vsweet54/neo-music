@@ -1,8 +1,13 @@
+process.on('uncaughtException', err => { console.error('UNCAUGHT:', err); process.exit(1); });
+process.on('unhandledRejection', err => { console.error('UNHANDLED:', err); process.exit(1); });
+
 require('dotenv').config();
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { DisTube } = require('distube');
 const fs = require('fs');
 const path = require('path');
+
+console.log('Starting bot...');
 
 const client = new Client({
   intents: [
@@ -13,6 +18,8 @@ const client = new Client({
   ],
 });
 
+console.log('Client created');
+
 client.distube = new DisTube(client, {
   emitNewSongOnly: true,
   leaveOnEmpty: true,
@@ -20,12 +27,16 @@ client.distube = new DisTube(client, {
   nsfw: false,
 });
 
+console.log('DisTube created');
+
 client.commands = new Collection();
 const commandFiles = fs.readdirSync(path.join(__dirname, 'commands')).filter(f => f.endsWith('.js'));
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
   if (command.data && command.execute) client.commands.set(command.data.name, command);
 }
+
+console.log('Commands loaded');
 
 const eventFiles = fs.readdirSync(path.join(__dirname, 'events')).filter(f => f.endsWith('.js'));
 for (const file of eventFiles) {
@@ -40,4 +51,5 @@ for (const file of distubeEventFiles) {
   client.distube.on(event.name, (...args) => event.execute(...args, client));
 }
 
+console.log('Logging in...');
 client.login(process.env.DISCORD_TOKEN);
