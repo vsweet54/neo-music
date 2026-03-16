@@ -3,18 +3,14 @@
   "version": "2.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "deploy": "node deploy-commands.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "discord.js": "14.14.1",
     "@discordjs/voice": "0.16.1",
     "opusscript": "0.0.8",
     "distube": "4.2.2",
-    "@distube/spotify": "2.0.2",
-    "@distube/soundcloud": "2.0.1",
     "dotenv": "16.4.5",
-    "genius-lyrics-api": "3.0.4",
     "ffmpeg-static": "5.2.0"
   }
 }

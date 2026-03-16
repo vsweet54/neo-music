@@ -1,8 +1,6 @@
 require('dotenv').config();
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { DisTube } = require('distube');
-const { SpotifyPlugin } = require('@distube/spotify');
-const { SoundCloudPlugin } = require('@distube/soundcloud');
 const fs = require('fs');
 const path = require('path');
 
@@ -16,15 +14,6 @@ const client = new Client({
 });
 
 client.distube = new DisTube(client, {
-  plugins: [
-    new SpotifyPlugin({
-      api: {
-        clientId: process.env.SPOTIFY_CLIENT_ID,
-        clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-      },
-    }),
-    new SoundCloudPlugin(),
-  ],
   emitNewSongOnly: true,
   leaveOnEmpty: true,
   leaveOnEmptyCooldown: 30000,
