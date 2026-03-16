@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { DisTube } = require('distube');
+const { YouTubePlugin } = require('@distube/youtube');
 const fs = require('fs');
 const path = require('path');
 
@@ -18,12 +19,7 @@ client.distube = new DisTube(client, {
   leaveOnEmpty: true,
   leaveOnFinish: true,
   nsfw: false,
-  ytdlOptions: {
-    quality: 'highestaudio',
-    filter: 'audioonly',
-    highWaterMark: 1 << 25,
-    dlChunkSize: 0,
-  },
+  plugins: [new YouTubePlugin()],
 });
 
 client.commands = new Collection();
