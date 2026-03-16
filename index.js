@@ -16,9 +16,8 @@ const client = new Client({
 client.distube = new DisTube(client, {
   emitNewSongOnly: true,
   leaveOnEmpty: true,
-  leaveOnEmptyCooldown: 30000,
   leaveOnFinish: true,
-  leaveOnFinishCooldown: 10000,
+  nsfw: false,
 });
 
 client.commands = new Collection();
