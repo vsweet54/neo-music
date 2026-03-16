@@ -2,6 +2,8 @@ require('dotenv').config();
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { DisTube } = require('distube');
 const { YouTubePlugin } = require('@distube/youtube');
+const { setDefaultResultOrder } = require('dns');
+setDefaultResultOrder('ipv4first');
 const fs = require('fs');
 const path = require('path');
 
