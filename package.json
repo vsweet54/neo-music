@@ -3,11 +3,12 @@
   "version": "2.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node deploy-commands.js && node index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "discord.js": "14.14.1",
     "@discordjs/voice": "0.16.1",
+    "@distube/yt-dlp": "^2.0.0",
     "opusscript": "0.0.8",
     "distube": "4.0.4",
     "dotenv": "16.4.5",
