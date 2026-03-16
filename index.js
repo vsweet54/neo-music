@@ -1,7 +1,6 @@
 require('dotenv').config();
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { DisTube } = require('distube');
-const { YtDlpPlugin } = require('@distube/yt-dlp');
 const fs = require('fs');
 const path = require('path');
 
@@ -19,7 +18,6 @@ client.distube = new DisTube(client, {
   leaveOnEmpty: true,
   leaveOnFinish: true,
   nsfw: false,
-  plugins: [new YtDlpPlugin({ update: false })],
 });
 
 client.commands = new Collection();
