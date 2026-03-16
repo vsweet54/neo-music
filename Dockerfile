@@ -14,4 +14,4 @@ COPY package*.json ./
 RUN npm install --legacy-peer-deps
 COPY . .
 
-CMD ["node", "index.js"]
+CMD ["sh", "-c", "node deploy-commands.js && node index.js"]
